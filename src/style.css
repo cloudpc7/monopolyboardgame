@@ -1,0 +1,148 @@
+body {
+  display: flex;
+  margin: 0;
+  justify-content: center;
+  font-family: 'Nunito', sans-serif;
+}
+
+.board {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(11, 116px);
+  grid-template-rows: repeat(11, 116px);
+}
+
+.monopoly-space {
+  grid-column: 2 / span 9;
+  grid-row: 2 / span 9;
+  border: 2px solid black;
+  background: #CDE6D0;
+}
+
+.board-space {
+  position: relative;
+  align-items: center;
+  width: 112px;
+  height: 112px;
+  text-align: center;
+  border: 2px solid black;
+  background: #CDE6D0;
+}
+
+.color-box {
+  width: 112px;
+  height: 20px;
+  margin-bottom: 6px;
+}
+
+.name {
+  margin: 0;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.value {
+  position: absolute;
+  margin: 0;
+  bottom: 0%;
+  left: 50%;
+  font-size: 9px;
+  font-weight: 800;
+  padding-bottom: 8px;
+}
+
+.board-title {
+  position: absolute;
+  top: 55%;
+  left: 35%;
+  transform: rotate(-38deg);
+  justify-content: center;
+  height: 6.75em;
+  border: 12px solid #FFFFFF;
+  background-color: #ED1B24;
+  box-shadow: inset 0px -8px 32px #000000;
+}
+
+.board-title > h1 {
+  margin: 0;
+  color: #FFFFFF;
+  font-size: 92px;
+  text-shadow: -7px 5px 14px #000000;
+}
+
+.description {
+  position:absolute;
+  top: 62%;
+  left: 36%;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  transform: rotate(-38deg)
+}
+
+.monopoly-guy {
+  position: absolute;
+  top: 44%;
+  left: 45.5%;
+  height: 130px;
+}
+
+.go-space {
+  margin: 0px;
+  font-size: 9px;
+  transform: rotate(-55deg);
+  padding-left: 12px;
+}
+
+.go-space > p {
+  margin: 0;
+}
+
+.go-icon {
+  height: 30px;
+  padding-top: 6px;
+}
+
+.jail {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  width: 94px;
+  height: 86px;
+  background-color:#F7941D;
+}
+
+.jail-icon {
+  height: 54px;
+  margin-top: 10px;
+  transform: rotate(-60deg);
+  padding-right: 8px;
+}
+
+.just {
+  position:absolute;
+  left: 50%;
+  bottom: 0%;
+}
+
+.just > p {
+  margin: 0;
+  padding-bottom: 6px;
+}
+
+.visiting {
+  position: absolute;
+  transform: rotate(-90deg);
+  left: 75%;
+  bottom: 55%;
+}
+
+.visiting > p {
+  margin: 0;
+  padding-bottom: 6px;
+}
+
+.community-chest {
+  height: 60px;
+}

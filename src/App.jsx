@@ -1,35 +1,64 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react'
+import Board from '../components/Board'
+import BoardData from '../components/BoardData'
+export default function App() {
+  const [boardGame,setBoardGame] = React.useState(BoardData)
 
-function App() {
-  const [count, setCount] = useState(0)
+  const spaceColor = (color) => {
+    if(color){
+      return {backgroundColor: color, borderBottom: '2px solid #000000'}
+    }
+  }
+  const spaceStyles = (space) => {
+    if(space >= 1 && space <= 10){
+      return {gridColumnEnd:-space,gridRowStart:11}
+    }
+    if(space >=11 && space <= 21){
+      return {
+              gridColumn:1,
+              gridRow:9 - space,
+              transform: 'rotate(90deg)'
+            }
+    }
+    if(space >=22 && space < 32){
+      return {transform: 'rotate(180deg)'}
+    }
+    if(space >=32 && space <=40){
+      return {transform: 'rotate(-90deg)'}
+    }
+  }
+
+  const board = boardGame.data.boardSpaces.map(boardSpace => {
+      return (
+        <div style={spaceStyles(boardSpace.space)}  className="board-space">
+            <div style={spaceColor(boardSpace.color)} className="color-box"></div>
+            <Board
+              key={boardSpace.id}
+              id={boardSpace.id}
+              space={boardSpace.space}
+              name={boardSpace.name}
+              value={boardSpace.value}
+              color={boardSpace.color}
+              img={boardSpace.img}
+          />
+        </div>
+
+      )
+  })
+  
+
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <main className="board">
+      {board}
+      <div className="monopoly-space">
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <span className="description">Fast-Dealing Property Trading Game</span>
+      <img className="monopoly-guy" src="./monopolyman.png"/>
+      <div className="board-title">
+        <h1>MONOPOLY</h1>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </main>
   )
 }
 
-export default App
