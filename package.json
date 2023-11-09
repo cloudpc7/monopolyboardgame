@@ -22,5 +22,17 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "vite": "^4.4.5"
-  }
+  },
+  "description": "monopoly board game",
+  "main": "vite.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cloudpc7/monopolyboardgame.git"
+  },
+  "author": "paul cloud",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cloudpc7/monopolyboardgame/issues"
+  },
+  "homepage": "https://github.com/cloudpc7/monopolyboardgame#readme"
 }
